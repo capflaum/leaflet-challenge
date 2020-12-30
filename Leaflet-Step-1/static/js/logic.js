@@ -73,7 +73,7 @@ labels = [];
 for (var i = 0; i < magnitude.length; i++) {
     div.innerHTML +=
         '<i style="background:' + getColor(magnitude[i] + 1) + '"></i> ' +
-        magnitude[i] + (magnitude[i + 1] ? '&ndash;' + magnitude[i + 1] + '<br>' : '+');
+        magnitude[i] + (magnitude[i + 1] ? '-' + magnitude[i + 1] + '<br>' : '+');
 }
 return div;
 };

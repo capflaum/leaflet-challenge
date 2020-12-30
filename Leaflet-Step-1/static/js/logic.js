@@ -17,8 +17,7 @@ function createFeatures(earthquakeData) {
   var earthquakeLayer = L.geoJSON(earthquakeData, {
     onEachFeature: onEachFeature,
     pointToLayer: function(feature, latlng) {
-        var radius = feature.properties.mag * 5;
-
+        var radius = feature.properties.mag * 3;
         if (feature.properties.mag > 5) {
             //black
             fillcolor = '#000000';
@@ -62,8 +61,9 @@ function getColor(mag) {
                     '#ffffff';
 }
 
-var legend = L.control({ position: "bottomleft" });
+var legend = L.control({position: "bottomleft"});
 
+//need to make more visible:
 legend.onAdd = function(myMap) {
 // L.DomUtil.create to append tag to container
 var div = L.DomUtil.create("div", "legend");
